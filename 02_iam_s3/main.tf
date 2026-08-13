@@ -4,7 +4,8 @@
 module "s3" {
   source = "./modules/s3"
   # Usamos bucket_prefix para evitar colisiones de nombres globales
-  bucket_prefix = var.s3_bucket_prefix
+  # bucket_prefix = var.s3_bucket_prefix
+  bucket_prefix = "${var.s3_bucket_prefix}-${var.region}-${var.environment}-"
 
   environment = var.environment
   tags        = var.common_tags

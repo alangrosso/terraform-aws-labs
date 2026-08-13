@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "bucket_test" {
   bucket_prefix = var.bucket_prefix
 
   # force_destroy = true
-  force_destroy = var.environment == "POC" ? true : false # Seguridad: Evita borrar datos en PROD
+  force_destroy = var.environment == "poc" ? true : false # Seguridad: Evita borrar datos en PROD
 
   tags = var.tags
 }
